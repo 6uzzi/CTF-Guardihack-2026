@@ -2,6 +2,7 @@
 # Write-Up - CTF GuardiHack 2027 - Le Coupon de la Dernière Chance
 
 **Catégorie :** Web
+
 **Difficulté :** Medium
 
 ## Contexte
