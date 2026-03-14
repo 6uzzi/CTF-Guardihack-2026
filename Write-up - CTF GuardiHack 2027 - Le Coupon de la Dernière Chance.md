@@ -1,5 +1,6 @@
 
 **Catégorie :** Web
+
 **Difficulté :** Medium
 
 # Contexte
