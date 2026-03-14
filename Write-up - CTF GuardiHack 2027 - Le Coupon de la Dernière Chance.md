@@ -1,15 +1,16 @@
 
-**Catégorie :** Web
+# Write-Up - CTF GuardiHack 2027 - Le Coupon de la Dernière Chance
 
+**Catégorie :** Web
 **Difficulté :** Medium
 
-# Contexte
+## Contexte
 
 Vous êtes coincé dans une zone de quarantaine avec seulement **10€** en poche. Le magasin de survie local propose des équipements indispensables, mais les prix sont exorbitants : **50€** pour un kit de secours et **70€** pour des rations.
 
 Une bannière affiche un code promo `STAYSAFE` donnant +10€, mais marqué _"une seule fois par personne"_.
 
-# Reconnaissance
+## Reconnaissance
 
 En lisant le code source, on pouvait observer une architecture claire :
 - `POST /apply_coupon` : applique le code promo
@@ -17,7 +18,7 @@ En lisant le code source, on pouvait observer une architecture claire :
 - `POST /checkout` : finalise l'achat
 - Un cookie `user_id` identifie chaque utilisateur côté serveur
 
-# Identification de la Vulnérabilité
+## Identification de la Vulnérabilité
 
 **Fonctionnement :**
 1. Vérifier → "Ce coupon est-il déjà utilisé ?" → NON 
@@ -30,7 +31,7 @@ Donc si on envoie plusieurs requêtes **simultanément**, elles passent toutes l
 
 **Vulnérabilité :** [CVE-2026-31824](https://nvd.nist.gov/vuln/detail/CVE-2026-31824)
 
-# Exploitation
+## Exploitation
 
 **Etape 1 - Obtenir un user_id vierge**
 ```bash
