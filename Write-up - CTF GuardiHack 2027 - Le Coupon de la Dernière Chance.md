@@ -49,7 +49,7 @@ done
 wait
 ```
 
-La boucle tourne 20 fois (pour être large). À chaque itération, curl envoie une requête POST avec notre cookie (`-b cookies.txt`) et le code promo (`-d "coupon=STAYSAFE"`). Le **`&`** à la fin de chaque curl est important: il envoie le processus en arrière-plan sans attendre sa fin donc les 30 requêtes partent **quasiment en même temps**. Le `wait` final bloque le script jusqu'à ce que tous les processus soient terminés.
+La boucle tourne 30 fois (pour être large). À chaque itération, curl envoie une requête POST avec notre cookie (`-b cookies.txt`) et le code promo (`-d "coupon=STAYSAFE"`). Le **`&`** à la fin de chaque curl est important: il envoie le processus en arrière-plan sans attendre sa fin donc les 30 requêtes partent **quasiment en même temps**. Le `wait` final bloque le script jusqu'à ce que tous les processus soient terminés.
 
 **Résultat :** le serveur crédite +10€ plusieurs fois avant d'avoir pu marquer le coupon comme utilisé → solde ≫ 310€.
 
